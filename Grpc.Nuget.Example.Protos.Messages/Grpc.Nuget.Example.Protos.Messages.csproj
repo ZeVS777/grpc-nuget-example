@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<PackageId>Grpc.Example.Protos.Messages</PackageId>
+		<Version>1.0.2</Version>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="Protos\*.proto" Pack="true" PackagePath="Protos" />
+		<Content Include="_._" Pack="true" PackagePath="lib\$(TargetFramework)" />
+	</ItemGroup>
+
+</Project>

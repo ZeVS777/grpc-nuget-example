@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.46.0" />
+    <PackageReference Include="Grpc.Example.Protos.Service" Version="1.0.3" GeneratePathProperty="true"/>
+  </ItemGroup>
+
+  <ItemGroup>
+	<Protobuf Include="$(PkgGrpc_Example_Protos_Service)\Protos\*.proto" ProtoRoot="$(PkgGrpc_Example_Protos_Service)\Protos" GrpcServices="Server" Link="Protos\%(FileName)%(Extension)" />
+  </ItemGroup>
+</Project>

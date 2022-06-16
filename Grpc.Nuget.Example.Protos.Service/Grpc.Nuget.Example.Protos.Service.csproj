@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<PackageId>Grpc.Example.Protos.Service</PackageId>
+		<Version>1.0.3</Version>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="Protos\*.proto" Pack="true" PackagePath="Protos" />
+		<Content Include="$(PkgGrpc_Example_Protos_Messages)\Protos\*.proto" Pack="true" PackagePath="\Protos" Link="Protos\%(FileName)%(Extension)" />
+		<None Remove="Protos\ExampleRpcService.proto" />
+		<Content Include="_._" Pack="true" PackagePath="lib\$(TargetFramework)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Grpc.Example.Protos.Messages" Version="1.0.2" GeneratePathProperty="true" />
+	</ItemGroup>
+
+</Project>

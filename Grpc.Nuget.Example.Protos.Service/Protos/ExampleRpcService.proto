@@ -1,0 +1,11 @@
+﻿syntax = "proto3";
+
+import "ExampleMessages.proto";
+
+option csharp_namespace = "Grpc.Nuget.Example.Service";
+
+package myService;
+
+service ExampleService {
+	rpc CallRpc(myMessages.Request) returns (myMessages.Response);
+}

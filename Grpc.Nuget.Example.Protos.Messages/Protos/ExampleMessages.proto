@@ -1,0 +1,13 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Grpc.Nuget.Example.Messages";
+
+package myMessages;
+
+message Request {
+	string message = 1;
+}
+
+message Response {
+	string message = 1;
+}
